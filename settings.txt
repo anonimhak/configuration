@@ -10,6 +10,7 @@ $ ~/.bashrc:
         alias aptu="sudo apt-get update"
         alias apti="sudo apt-get install"
         alias aptr="sudo apt-get remove"
+        alias aptar="sudo add-apt-repository"
         alias cvenv="virtualenv .venv -p"
         alias avenv="source .venv/bin/activate"
 
