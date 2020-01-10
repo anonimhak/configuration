@@ -1,24 +1,31 @@
-~/.bashrc:
-  end file:
-    alias torboboost="sudo apt-get update -y && sudo apt-get full-upgrade -y && sudo apt-get autoremove -y && sudo apt-get clean"
-    alias gits="git status"
-    alias gitl="git log"
-    alias gitd="git diff"
-    alias gitc="git commit"
-    alias gitp="git push"
-    alias aptu="sudo apt-get update"
-    alias apti="sudo apt-get install"
-    alias aptr="sudo apt-get remove"
-    alias cvenv="virtualenv .venv -p"
-    alias avenv="source .venv/bin/activate"
+# Add alias in bashrc
+$ ~/.bashrc:
+    end file:
+        alias torboboost="sudo apt-get update -y && sudo apt-get full-upgrade -y && sudo apt-get autoremove -y && sudo apt-get clean"
+        alias gits="git status"
+        alias gitl="git log"
+        alias gitd="git diff"
+        alias gitc="git commit"
+        alias gitp="git push"
+        alias aptu="sudo apt-get update"
+        alias apti="sudo apt-get install"
+        alias aptr="sudo apt-get remove"
+        alias cvenv="virtualenv .venv -p"
+        alias avenv="source .venv/bin/activate"
 
-/etc/sudoers:
-  start line 'root':
-    between 'ALL=(ALL:ALL)' and 'ALL':
-      Add: 'NOPASSWD:'
-  start line '%sudo':
-    between 'ALL=(ALL:ALL)' and 'ALL':
-      ADD 'NOPASSWD:'
-  start line '%(user_name)':
-    Between 'ALL=(ALL:ALL)' and 'ALL':
-      Add 'NOPASSWD:'
+# sudo password
+$ /etc/sudoers:
+    start line 'root':
+        between 'ALL=(ALL:ALL)' and 'ALL':
+            Add: 'NOPASSWD:'
+    start line '%sudo':
+        between 'ALL=(ALL:ALL)' and 'ALL':
+            ADD 'NOPASSWD:'
+    start line '%(user_name)':
+        Between 'ALL=(ALL:ALL)' and 'ALL':
+            Add 'NOPASSWD:'
+
+# Generator ssh key for git
+> ssh-keygen:
+    $ ~/.ssh/:
+        > cat id_rsa.pub
